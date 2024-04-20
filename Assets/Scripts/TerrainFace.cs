@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class TerrainFace
 {
+    ShapeGenerator _shapeGenerator;
     Mesh _mesh;
     int _resolution;
     Vector3 _localUp; // which way the face is looking
     Vector3 _axisA, _axisB;
 
 
-    public TerrainFace(Mesh mesh, int resolution, Vector3 localUp)
+    public TerrainFace(ShapeGenerator shapeGenerator, Mesh mesh, int resolution, Vector3 localUp)
     {
+        _shapeGenerator = shapeGenerator;
         _mesh = mesh;
         _resolution = resolution;
         _localUp = localUp;
@@ -31,7 +33,7 @@ public class TerrainFace
                 Vector2 percent = new Vector2(y, x) / (_resolution - 1); // defining where the vertex is on face
                 Vector3 pointOnUnitCube = _localUp + (percent.x - .5f) * 2 * _axisA + (percent.y - .5f) * 2 * _axisB;
                 Vector3 pointOnUnitSphere = pointOnUnitCube.normalized;
-                vertices[i] = pointOnUnitSphere;
+                vertices[i] = _shapeGenerator.CalculatePointOnPlanet(pointOnUnitSphere);
 
 
                 if (x != _resolution - 1 && y != _resolution - 1)
