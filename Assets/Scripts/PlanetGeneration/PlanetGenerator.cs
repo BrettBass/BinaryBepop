@@ -190,6 +190,7 @@ public class PlanetGenerator : MonoBehaviour {
 		// I don't know why...
 		Vector3[] vertices = new Vector3[] { Vector3.zero };
 		ComputeHelper.CreateStructuredBuffer<Vector3> (ref vertexBuffer, vertices);
+		Debug.Log(vertexBuffer);
 		body.shape.CalculateHeights (vertexBuffer);
 	}
 
