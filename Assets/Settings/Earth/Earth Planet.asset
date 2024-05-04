@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fb3e5314acfa1f468ad9bb98becd8aa, type: 3}
   m_Name: Earth Planet
   m_EditorClassIdentifier: 
-  shape: {fileID: 0}
-  shading: {fileID: 0}
+  shape: {fileID: 11400000, guid: c4589f8e41c6ed6439f95099c3606c29, type: 2}
+  shading: {fileID: 11400000, guid: bdea9634f171d1f429d6b686be3beb4d, type: 2}

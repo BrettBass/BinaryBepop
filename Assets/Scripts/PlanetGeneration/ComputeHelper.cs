@@ -62,26 +62,26 @@ public static class ComputeHelper {
 
 	// Test
 
-	public static ComputeBuffer CreateAndSetBuffer<T> (T[] data, ComputeShader cs, string nameID, int kernelIndex = 0) {
+	public static ComputeBuffer CreateAndSetBuffer<T> (T[] data, ComputeShader cs, string nameID, int kernelIndex = 1) {
 		ComputeBuffer buffer = null;
 		CreateAndSetBuffer<T> (ref buffer, data, cs, nameID, kernelIndex);
 		return buffer;
 	}
 
-	public static void CreateAndSetBuffer<T> (ref ComputeBuffer buffer, T[] data, ComputeShader cs, string nameID, int kernelIndex = 0) {
+	public static void CreateAndSetBuffer<T> (ref ComputeBuffer buffer, T[] data, ComputeShader cs, string nameID, int kernelIndex = 1) {
 		int stride = System.Runtime.InteropServices.Marshal.SizeOf (typeof (T));
 		CreateStructuredBuffer<T> (ref buffer, data.Length);
 		buffer.SetData (data);
 		cs.SetBuffer (kernelIndex, nameID, buffer);
 	}
 
-	public static ComputeBuffer CreateAndSetBuffer<T> (int length, ComputeShader cs, string nameID, int kernelIndex = 0) {
+	public static ComputeBuffer CreateAndSetBuffer<T> (int length, ComputeShader cs, string nameID, int kernelIndex = 1) {
 		ComputeBuffer buffer = null;
 		CreateAndSetBuffer<T> (ref buffer, length, cs, nameID, kernelIndex);
 		return buffer;
 	}
 
-	public static void CreateAndSetBuffer<T> (ref ComputeBuffer buffer, int length, ComputeShader cs, string nameID, int kernelIndex = 0) {
+	public static void CreateAndSetBuffer<T> (ref ComputeBuffer buffer, int length, ComputeShader cs, string nameID, int kernelIndex = 1) {
 		CreateStructuredBuffer<T> (ref buffer, length);
 		cs.SetBuffer (kernelIndex, nameID, buffer);
 	}
@@ -95,8 +95,9 @@ public static class ComputeHelper {
 		}
 	}
 
-	public static Vector3Int GetThreadGroupSizes (ComputeShader compute, int kernelIndex = 0) {
+	public static Vector3Int GetThreadGroupSizes (ComputeShader compute, int kernelIndex = 1) {
 		uint x, y, z;
+        Debug.Log(string.Format("kernelIndex: {0}", kernelIndex));
 		compute.GetKernelThreadGroupSizes (kernelIndex, out x, out y, out z);
 		return new Vector3Int ((int) x, (int) y, (int) z);
 	}

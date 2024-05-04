@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   randomize: 0
   seed: 0
-  heightMapCompute: {fileID: 7200000, guid: 612883d429d932e418cc6e92dc42e3f5, type: 3}
-  perturbVertices: 0
-  perturbCompute: {fileID: 7200000, guid: 82aec45c5c5fcb246a7500c23ce74dbf, type: 3}
+  heightMapCompute: {fileID: 7200000, guid: d6df9e6cc324e48a892dd6a9cf741d65, type: 3}
+  perturbVertices: 1
+  perturbCompute: {fileID: 7200000, guid: c95c667630d66481daf208e2a7a4d95d, type: 3}
   perturbStrength: 0.7
   oceanDepthMultiplier: 5
   oceanFloorDepth: 1.5
@@ -49,4 +49,4 @@ MonoBehaviour:
     verticalShift: 0
     peakSmoothing: 0
     offset: {x: 0, y: 0, z: 0}
-  testParams: {x: 0, y: 0, z: 0, w: 0}
+  testParams: {x: 0.93, y: 1.62, z: 1.7, w: 3.27}
