@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153a3d5bb3493414582c51902787d6e4, type: 3}
   m_Name: Shape
   m_EditorClassIdentifier: 
-  randomize: 0
-  seed: 0
+  randomize: 1
+  seed: -2293
   heightMapCompute: {fileID: 7200000, guid: d6df9e6cc324e48a892dd6a9cf741d65, type: 3}
   perturbVertices: 1
   perturbCompute: {fileID: 7200000, guid: c95c667630d66481daf208e2a7a4d95d, type: 3}
-  perturbStrength: 0.7
-  oceanDepthMultiplier: 5
+  perturbStrength: 0.666
+  oceanDepthMultiplier: 7.48
   oceanFloorDepth: 1.5
   oceanFloorSmoothing: 0.5
   mountainBlend: 1.2
