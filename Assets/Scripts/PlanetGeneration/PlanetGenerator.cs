@@ -46,8 +46,7 @@ public class PlanetGenerator : MonoBehaviour {
 	void Update () {
 		if (InEditMode) {
 			HandleEditModeGeneration ();
-		}
-	}
+		}	}
 
 	// Handles creation of celestial body when entering game mode
 	// This differs from the edit-mode version in the following ways:
@@ -198,7 +197,6 @@ public class PlanetGenerator : MonoBehaviour {
 	// Shading data from the Shading object is stored in the mesh uvs
 	// Returns the min/max height of the terrain
 	Vector2 GenerateTerrainMesh (ref Mesh mesh, int resolution) {
-                Debug.Log("here");
 		var (vertices, triangles) = CreateSphereVertsAndTris (resolution);
 		ComputeHelper.CreateStructuredBuffer<Vector3> (ref vertexBuffer, vertices);
 
