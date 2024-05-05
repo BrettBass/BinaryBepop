@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Shading
   m_EditorClassIdentifier: 
   randomize: 1
-  seed: 1763
+  seed: 5388
   terrainMaterial: {fileID: 2100000, guid: 2a2eda161cee885458d6078ac9f56148, type: 2}
   hasOcean: 1
   oceanLevel: 0.48
   oceanSettings: {fileID: 11400000, guid: 0bd882e6cf521894f9632009cab5c64d, type: 2}
   shadingDataCompute: {fileID: 7200000, guid: f3a2904f78271471481822700022a157, type: 3}
   customizedCols:
-    shoreColLow: {r: 0, g: 0, b: 0, a: 0}
+    shoreColLow: {r: 0.9056604, g: 0.046991818, b: 0.046991818, a: 0.9647059}
     shoreColHigh: {r: 0, g: 0, b: 0, a: 0}
     flatColLowA: {r: 0, g: 0, b: 0, a: 0}
     flatColHighA: {r: 0, g: 0, b: 0, a: 0}
@@ -29,14 +29,14 @@ MonoBehaviour:
     steepLow: {r: 0, g: 0, b: 0, a: 0}
     steepHigh: {r: 0, g: 0, b: 0, a: 0}
   randomizedCols:
-    shoreColLow: {r: 0.6612232, g: 0.7451465, b: 0.90325505, a: 1}
-    shoreColHigh: {r: 0.33469632, g: 0.60867107, b: 0.49879408, a: 1}
-    flatColLowA: {r: 0.5668931, g: 0.37746137, b: 0.708385, a: 1}
-    flatColHighA: {r: 0.4704209, g: 0.2964734, b: 0.39531934, a: 1}
-    flatColLowB: {r: 0.7006511, g: 0.292986, b: 0.70900923, a: 1}
-    flatColHighB: {r: 0.42898706, g: 0.26066354, b: 0.5023533, a: 1}
-    steepLow: {r: 0.13120596, g: 0.41353336, b: 0.24798612, a: 1}
-    steepHigh: {r: 0.028044142, g: 0.20294492, b: 0.048611216, a: 1}
+    shoreColLow: {r: 0.6973993, g: 0.76771003, b: 0.94305634, a: 1}
+    shoreColHigh: {r: 0.64528227, g: 0.44455764, b: 0.6982285, a: 1}
+    flatColLowA: {r: 0.3454833, g: 0.64745057, b: 0.79153156, a: 1}
+    flatColHighA: {r: 0.18787074, g: 0.35482165, b: 0.54754496, a: 1}
+    flatColLowB: {r: 0.75631315, g: 0.4422723, b: 0.35723618, a: 1}
+    flatColHighB: {r: 0.5541504, g: 0.21253979, b: 0.4639083, a: 1}
+    steepLow: {r: 0.25610593, g: 0.48853663, b: 0.5446736, a: 1}
+    steepHigh: {r: 0.10451549, g: 0.14164618, b: 0.24090707, a: 1}
   detailWarpNoise:
     numLayers: 4
     lacunarity: 2
@@ -56,7 +56,7 @@ MonoBehaviour:
   largeNoise:
     numLayers: 4
     lacunarity: 2
-    persistence: 0.5
+    persistence: 1.18
     scale: 1
     elevation: 1
     verticalShift: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
   smallNoise:
     numLayers: 4
     lacunarity: 2
-    persistence: 0.5
+    persistence: 0.98
     scale: 1
     elevation: 1
     verticalShift: 0

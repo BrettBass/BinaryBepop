@@ -53,24 +53,29 @@ Shader "Celestial/Earth"
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_Metallic ("Metallic", Range(0,1)) = 0.0
 
-	
+
 
 		_TestParams ("Test Params", Vector) = (0,0,0,0)
-	
+
 	}
 	SubShader
 	{
 		Tags { "RenderType"="Opaque" }
-		LOD 200
+		LOD 100
 
-		CGPROGRAM
-
+		HLSLPROGRAM
+		#pragma surface URPSurfaceShader URP/Lit fullforwardshadows
 		// Physically based Standard lighting model, and enable shadows on all light types
-		#pragma surface surf Standard fullforwardshadows vertex:vert
-		#pragma target 3.5
+
+
+		#pragma target 2.5
+		#pragma only_renderers d3d11
+		#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
 
 		#include "../Includes/Triplanar.cginc"
 		#include "../Includes/Math.cginc"
+
+
 
 		float4 _TestParams;
 		float4 _FresnelCol;
@@ -153,7 +158,7 @@ Shader "Celestial/Earth"
 		sampler2D _SnowNormal;
 		float _NoiseScale;
 		float _NoiseScale2;
-	
+
 
 		// Height data:
 		float2 heightMinMax;
@@ -164,14 +169,14 @@ Shader "Celestial/Earth"
 		fixed4 LightingNoLighting(SurfaceOutput s, fixed3 lightDir, fixed atten)
 		{
 			fixed4 c;
-			c.rgb = s.Albedo * 0.8; 
+			c.rgb = s.Albedo * 0.8;
 			c.a = s.Alpha;
 			return c;
 		}
 
-		void surf (Input IN, inout SurfaceOutputStandard o)
+		void surf (Input IN, inout SurfaceOutput o)
 		{
-		
+
 			// Calculate steepness: 0 where totally flat, 1 at max steepness
 			float3 sphereNormal = normalize(IN.vertPos);
 			float steepness = 1 - dot (sphereNormal, IN.normal);
@@ -212,13 +217,13 @@ Shader "Celestial/Earth"
 			banding = (int)(banding * (_SteepBands + 1)) / _SteepBands;
 			banding = (abs(banding - 0.5) * 2 - 0.5) * _SteepBandStrength;
 			float3 steepTerrainCol = lerp(_SteepLow, _SteepHigh, aboveShoreHeight01 + banding);
-			
+
 			// Flat to steep colour transition
 			float flatBlendNoise = (texNoise2.r - 0.5) * _FlatToSteepNoise;
 			float flatStrength = 1 - Blend(_SteepnessThreshold + flatBlendNoise, _FlatToSteepBlend, steepness);
 			float flatHeightFalloff = 1 - Blend(_MaxFlatHeight + flatBlendNoise, _FlatToSteepBlend, aboveShoreHeight01);
 			flatStrength *= flatHeightFalloff;
-			
+
 			// Snowy poles
 			float3 snowCol = 0;
 			float snowWeight = 0;
@@ -239,7 +244,6 @@ Shader "Celestial/Earth"
 			o.Smoothness = glossiness;
 			o.Metallic = _Metallic;
 		}
-		ENDCG
+		ENDHLSL
 	}
-	FallBack "Diffuse"
 }
