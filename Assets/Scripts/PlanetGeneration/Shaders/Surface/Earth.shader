@@ -1,6 +1,7 @@
 ﻿
 Shader "Celestial/Earth"
 {
+
 	Properties
 	{
 		[Header(Flat Terrain)]
@@ -60,20 +61,40 @@ Shader "Celestial/Earth"
 	}
 	SubShader
 	{
-		Tags { "RenderType"="Opaque" }
-		LOD 100
 
+		Tags { "RenderType"="Opaque" "RenderPipeline" = "UniversalRenderPipeline" }
+		LOD 200
+
+		Pass{
 		HLSLPROGRAM
-		#pragma surface URPSurfaceShader URP/Lit fullforwardshadows
+
+		#pragma vertex vert
+		#pragma fragment frag
+		#pragma enable_d3d11_debug_symbols
+
+		//#pragma surface URPSurfaceShader URP/Lit fullforwardshadows
 		// Physically based Standard lighting model, and enable shadows on all light types
 
 
-		#pragma target 2.5
-		#pragma only_renderers d3d11
-		#include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
-
+		#pragma target 5.0
+		//#pragma only_renderers d3d11
+		#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+		
 		#include "../Includes/Triplanar.cginc"
 		#include "../Includes/Math.cginc"
+
+            struct appdata_full
+            {
+                float4 vertex : POSITION;
+                float4 tangent : TANGENT;
+                float3 normal : NORMAL;
+                float4 texcoord : TEXCOORD0;
+                float4 texcoord1 : TEXCOORD1;
+                float4 texcoord2 : TEXCOORD2;
+                float4 texcoord3 : TEXCOORD3;
+                half4 color : COLOR;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
+            };
 
 
 
@@ -97,7 +118,8 @@ Shader "Celestial/Earth"
 
 		void vert (inout appdata_full v, out Input o)
 		{
-			UNITY_INITIALIZE_OUTPUT(Input, o);
+			o = (Input)0;
+			//UNITY_INITIALIZE_OUTPUT(Input, o);
 			o.vertPos = v.vertex;
 			o.normal = v.normal;
 			o.terrainData = v.texcoord;
@@ -164,11 +186,20 @@ Shader "Celestial/Earth"
 		float2 heightMinMax;
 		float oceanLevel;
 
-
-
-		fixed4 LightingNoLighting(SurfaceOutput s, fixed3 lightDir, fixed atten)
+		struct SurfaceOutput
 		{
-			fixed4 c;
+			half3 Albedo;  // diffuse color
+			half3 Normal;  // tangent space normal, if written
+			half3 Emission;
+			half Specular;  // specular power in 0..1 range
+			half Gloss;    // specular intensity
+			half Alpha;    // alpha for transparencies
+			float Metallic;
+		};
+
+		half4 LightingNoLighting(SurfaceOutput s, half3 lightDir, half atten)
+		{
+			half4 c;
 			c.rgb = s.Albedo * 0.8;
 			c.a = s.Alpha;
 			return c;
@@ -241,9 +272,38 @@ Shader "Celestial/Earth"
 			// Glossiness
 			float glossiness = dot(o.Albedo, 1) / 3 * _Glossiness;
 			glossiness = max(glossiness, snowWeight * _SnowSpecular);
-			o.Smoothness = glossiness;
+			o.Gloss = glossiness;
 			o.Metallic = _Metallic;
 		}
+		    struct Attributes
+            {
+                // The positionOS variable contains the vertex positions in object
+                // space.
+                float4 positionOS   : POSITION;                 
+            };
+		    struct Varyings
+            {
+                // The positions in this struct must have the SV_POSITION semantic.
+                float4 positionHCS  : SV_POSITION;
+            };   
+		    Varyings vert(Attributes IN)
+            {
+                // Declaring the output object (OUT) with the Varyings struct.
+                Varyings OUT;
+                // The TransformObjectToHClip function transforms vertex positions
+                // from object space to homogenous space
+                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
+                // Returning the output.
+                return OUT;
+            }
+		    half4 frag() : SV_Target
+            {
+                // Defining the color variable and returning it.
+                half4 customColor;
+                customColor = half4(0, .5, 0, 1);
+                return customColor;
+            }
 		ENDHLSL
+		}
 	}
 }

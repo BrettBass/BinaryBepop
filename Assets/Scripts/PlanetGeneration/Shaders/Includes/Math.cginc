@@ -1,6 +1,6 @@
-static const float PI = 3.14159265359;
-static const float TAU = PI * 2;
-static const float maxFloat = 3.402823466e+38;
+static const float PI_ME = 3.14159265359;
+static const float TAU_ME = PI_ME * 2;
+static const float maxFloat_ME = 3.402823466e+38;
 
 // Remap a value from one range to another
 float remap(float v, float minOld, float maxOld, float minNew, float maxNew) {
@@ -69,5 +69,5 @@ float2 raySphere(float3 centre, float radius, float3 rayOrigin, float3 rayDir) {
         }
     }
 	 // Ray did not intersect sphere
-    return float2(maxFloat, 0);
+    return float2(maxFloat_ME, 0);
 }
