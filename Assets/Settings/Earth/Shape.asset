@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Shape
   m_EditorClassIdentifier: 
   randomize: 1
-  seed: 2733
+  seed: 4611
   heightMapCompute: {fileID: 7200000, guid: d6df9e6cc324e48a892dd6a9cf741d65, type: 3}
   perturbVertices: 1
   perturbCompute: {fileID: 7200000, guid: c95c667630d66481daf208e2a7a4d95d, type: 3}
   perturbStrength: 0.548
-  oceanDepthMultiplier: 31.55
-  oceanFloorDepth: 1.5
+  oceanDepthMultiplier: 30
+  oceanFloorDepth: 31.3
   oceanFloorSmoothing: 0.5
-  mountainBlend: 1
+  mountainBlend: 0.45
   continentNoise:
     numLayers: 4
     lacunarity: 2
     persistence: 0.5
     scale: 1
-    elevation: 1
+    elevation: 1.3
     verticalShift: 0
     offset: {x: 0, y: 0, z: 0}
   maskNoise:

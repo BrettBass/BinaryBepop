@@ -78,41 +78,59 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Depth: 1.47
+    - _Deep_Depth_Smoothness: 0.3
+    - _Deepest_Depth_Smoothness: 0
+    - _Deepest_Depth_Start: 0
+    - _Deepest_Depth_Strength: 0
+    - _Depth: 2.51
+    - _Depth_Strength: 0
     - _Distance: 9.01
+    - _Edge_Froth_Scale_1: 40
+    - _Edge_Froth_Smoothness: 0.33
+    - _Edge_Froth_Speed_1: 0.03
+    - _Edge_Froth_Speed_2: 0.03
+    - _Edge_Froth_Strength: 0.95
+    - _Edge_Froth_Width: 0.39
+    - _Edgre_Froth_Scale_2: 40
     - _Foam_Amount: 4.3
     - _Foam_Cuttoff: 1.8
     - _Foam_Scale: 0.47
     - _Foam_Speed: 0.02
     - _Height_Frequency: 1.4
-    - _Metallic: 0.179
+    - _Metallic: 0.322
     - _Normal_Strength: 3.68
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Refraction_Speed: 0.001
     - _Refraction_Strength: 0.58
     - _Smoothness: 0.87
+    - _Starting_Depth: 0
     - _Strength: 0.07
     - _Wave_Amplitude: 0.9
     - _Wave_Speed: 1
-    - _alpha_strength: 1.12
-    - _normal_strength: 2
-    - _smoothness: 0.484
-    - _strength: 4
+    - _alpha_strength: 1
+    - _normal_strength: 258.45
+    - _smoothness: 0.407
+    - _strength: 0.59
     - _wave_scale_1: 10
     - _wave_scale_2: 10
     - _wave_speed: 0.1
+    - _wave_speed_1: 0.5
+    - _wave_speed_2: 0.5
     m_Colors:
+    - _Deep_Depth_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Deep_Water: {r: 0.068574235, g: 0.1262326, b: 0.6320754, a: 0.78039217}
-    - _Deep_Water_Color: {r: 0, g: 0.41305453, b: 0.764151, a: 0.827451}
+    - _Deep_Water_Color: {r: 0, g: 0.05791033, b: 0.7647059, a: 0.827451}
+    - _Deepest_Depth_Color: {r: 0, g: 0, b: 0, a: 0}
     - _Depth_Color: {r: 0.02352941, g: 0.4823529, b: 0.55294114, a: 0.7019608}
+    - _Edge_Froth_Color: {r: 0.9528302, g: 0.9483357, b: 0.9483357, a: 0}
     - _Foam_Color: {r: 1, g: 1, b: 1, a: 0.77254903}
     - _Refraction_Scale: {r: 2.2, g: 1.5, b: 0, a: 0}
     - _Shallow_Water: {r: 0.27189392, g: 0.6020407, b: 0.8867924, a: 0.9098039}
-    - _Shallow_Water_Color: {r: 0.212, g: 0.759, b: 1, a: 1}
+    - _Shallow_Water_Color: {r: 0.21199995, g: 0.759, b: 1, a: 1}
     - _Surface_Color: {r: 0.022249907, g: 0.6702895, b: 0.9433962, a: 0.6666667}
     - _Wave_Tiling_1: {r: 2, g: 2, b: 0, a: 0}
-    - _Wave_Tiling_2: {r: 2, g: 52, b: 0, a: 0}
+    - _Wave_Tiling_2: {r: 2, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4962581766101708653
 MonoBehaviour:
