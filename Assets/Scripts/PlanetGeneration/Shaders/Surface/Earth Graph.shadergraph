@@ -7128,6 +7128,24 @@
                     "m_Guid": ""
                 },
                 "layerTextureType": 0
+            },
+            {
+                "layerName": "Layer2",
+                "layerRefName": "Layer_98DB80F9",
+                "layerTexture": {
+                    "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+                    "m_Guid": ""
+                },
+                "layerTextureType": 0
+            },
+            {
+                "layerName": "Layer3",
+                "layerRefName": "Layer_AE366A07",
+                "layerTexture": {
+                    "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+                    "m_Guid": ""
+                },
+                "layerTextureType": 0
             }
         ],
         "procedural": false,

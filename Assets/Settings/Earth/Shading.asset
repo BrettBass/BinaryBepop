@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfc886b48dbbee24094b2bc5062e8902, type: 3}
   m_Name: Shading
   m_EditorClassIdentifier: 
-  randomize: 1
-  seed: 5388
-  terrainMaterial: {fileID: 2100000, guid: 2a2eda161cee885458d6078ac9f56148, type: 2}
+  randomize: 0
+  seed: 0
+  terrainMaterial: {fileID: 2100000, guid: bdbd03cae892f574287737066566c400, type: 2}
   hasOcean: 1
   oceanLevel: 0.48
   oceanSettings: {fileID: 11400000, guid: 0bd882e6cf521894f9632009cab5c64d, type: 2}
@@ -29,14 +29,14 @@ MonoBehaviour:
     steepLow: {r: 0, g: 0, b: 0, a: 0}
     steepHigh: {r: 0, g: 0, b: 0, a: 0}
   randomizedCols:
-    shoreColLow: {r: 0.6973993, g: 0.76771003, b: 0.94305634, a: 1}
-    shoreColHigh: {r: 0.64528227, g: 0.44455764, b: 0.6982285, a: 1}
-    flatColLowA: {r: 0.3454833, g: 0.64745057, b: 0.79153156, a: 1}
-    flatColHighA: {r: 0.18787074, g: 0.35482165, b: 0.54754496, a: 1}
-    flatColLowB: {r: 0.75631315, g: 0.4422723, b: 0.35723618, a: 1}
-    flatColHighB: {r: 0.5541504, g: 0.21253979, b: 0.4639083, a: 1}
-    steepLow: {r: 0.25610593, g: 0.48853663, b: 0.5446736, a: 1}
-    steepHigh: {r: 0.10451549, g: 0.14164618, b: 0.24090707, a: 1}
+    shoreColLow: {r: 0.93193555, g: 0.7173348, b: 0.6822446, a: 1}
+    shoreColHigh: {r: 0.69598514, g: 0.71532005, b: 0.637026, a: 1}
+    flatColLowA: {r: 0.64819455, g: 0.34867626, b: 0.79092175, a: 1}
+    flatColHighA: {r: 0.54586124, g: 0.17150234, b: 0.2508871, a: 1}
+    flatColLowB: {r: 0.7113225, g: 0.36969936, b: 0.43411013, a: 1}
+    flatColHighB: {r: 0.46242028, g: 0.2161361, b: 0.36532828, a: 1}
+    steepLow: {r: 0.47678986, g: 0.37460327, b: 0.22773594, a: 1}
+    steepHigh: {r: 0.24268404, g: 0.18785878, b: 0.14396264, a: 1}
   detailWarpNoise:
     numLayers: 4
     lacunarity: 2

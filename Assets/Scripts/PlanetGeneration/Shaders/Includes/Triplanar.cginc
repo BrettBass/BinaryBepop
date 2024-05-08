@@ -48,7 +48,7 @@ float3 blend_rnm(float3 n1, float3 n2)
 
 // Sample normal map with triplanar coordinates
 // Returned normal will be in obj/world space (depending whether pos/normal are given in obj or world space)
-// Based on: medium.com/@bgolus/normal-mapping-for-a-triplanar-shader-10bf39dca05a
+// Based on: medium.com/@bgolus/normal-mapping-for-a-triplanar-shader-10bf39dca05aa
 float3 triplanarNormal(float3 vertPos, float3 normal, float3 scale, float2 offset, sampler2D normalMap) {
 	float3 absNormal = abs(normal);
 
