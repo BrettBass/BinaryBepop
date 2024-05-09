@@ -46,8 +46,7 @@ public class PlanetGenerator : MonoBehaviour {
 	void Update () {
 		if (InEditMode) {
 			HandleEditModeGeneration ();
-		}
-	}
+		}	}
 
 	// Handles creation of celestial body when entering game mode
 	// This differs from the edit-mode version in the following ways:

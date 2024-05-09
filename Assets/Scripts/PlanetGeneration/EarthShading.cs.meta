@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: dfc886b48dbbee24094b2bc5062e8902
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - terrainMaterial: {fileID: 2100000, guid: 6b6d3f5beddd942d18a71a6456de5da5, type: 2}
+  - oceanSettings: {fileID: 11400000, guid: 0bd882e6cf521894f9632009cab5c64d, type: 2}
+  - shadingDataCompute: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -97,7 +97,9 @@ public static class ComputeHelper {
 
 	public static Vector3Int GetThreadGroupSizes (ComputeShader compute, int kernelIndex = 0) {
 		uint x, y, z;
-		compute.GetKernelThreadGroupSizes (kernelIndex, out x, out y, out z);
+         kernelIndex = compute.FindKernel("CSMain");
+
+        compute.GetKernelThreadGroupSizes (kernelIndex, out x, out y, out z);
 		return new Vector3Int ((int) x, (int) y, (int) z);
 	}
 
