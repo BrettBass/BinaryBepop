@@ -1392,8 +1392,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9058824, g: 0.3254902, b: 0.09411766, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 10
+  m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -3242,8 +3242,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.9058824, g: 0.3254902, b: 0.09411766, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 10
+  m_Range: 4
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -3578,6 +3578,7 @@ GameObject:
   - component: {fileID: 592409234270179003}
   - component: {fileID: 7427738702924430871}
   - component: {fileID: 6126756754511012035}
+  - component: {fileID: 6570227086772813879}
   m_Layer: 0
   m_Name: Blaster
   m_TagString: Untagged
@@ -3599,6 +3600,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5404504052688014038}
+  - {fileID: 1766972583661935206}
   m_Father: {fileID: 4809507703528041052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7427738702924430871
@@ -3651,6 +3653,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6570227086772813879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3958770308126773848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb33cda57c65bb4bbdd85cf1d8b9d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectilePrefab: {fileID: 696975335402912389, guid: 683a7914dd6300149b44fcbbfb1fe23e,
+    type: 3}
+  Muzzle: {fileID: 1766972583661935206}
+  _coolDownTime: 0.25
 --- !u!1 &3965317025906166555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3944,6 +3962,7 @@ GameObject:
   - component: {fileID: 3435600493592525678}
   - component: {fileID: 2466803287505073669}
   - component: {fileID: 8092223075921193263}
+  - component: {fileID: 8949562667443567761}
   m_Layer: 0
   m_Name: Engine1
   m_TagString: Untagged
@@ -4018,6 +4037,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8949562667443567761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4380742059706562759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd914b367c66b194896472d2d775ed81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Thruster: {fileID: 6686982616376385684}
 --- !u!1 &4399583601722692603
 GameObject:
   m_ObjectHideFlags: 0
@@ -4394,6 +4426,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4723778906113419620
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766972583661935206}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1766972583661935206
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4723778906113419620}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 592409234270179003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4783140005447549353
 GameObject:
   m_ObjectHideFlags: 0
@@ -4530,6 +4593,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.5, y: 0.1, z: 1.4}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &5325356504016937815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3489731124835580598}
+  m_Layer: 0
+  m_Name: Muzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3489731124835580598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5325356504016937815}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6234635356803643044}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5385531060128078824
 GameObject:
   m_ObjectHideFlags: 0
@@ -4720,7 +4814,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 951acba86dc8b764b9387127c7a03f97, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6415,7 +6509,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.83396226, g: 0.32137498, b: 0.06136694, a: 1}
+      key0: {r: 0.9294118, g: 0.38823533, b: 0.0627451, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -6973,6 +7067,7 @@ GameObject:
   - component: {fileID: 3434280397823391308}
   - component: {fileID: 9077564809907402440}
   - component: {fileID: 7443828423805959152}
+  - component: {fileID: 2896907206869646957}
   m_Layer: 0
   m_Name: Engine1
   m_TagString: Untagged
@@ -7047,6 +7142,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2896907206869646957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220217688721102307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd914b367c66b194896472d2d775ed81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Thruster: {fileID: 5401388875371543968}
 --- !u!1 &7222464456787856548
 GameObject:
   m_ObjectHideFlags: 0
@@ -7775,10 +7883,12 @@ MonoBehaviour:
   RollForce: 1000
   YawForce: 2000
   PitchForce: 3000
-  ThrustAmount: 0
   RollAmount: 0
   YawAmount: 0
   PitchAmount: 0
+  Engines:
+  - {fileID: 8949562667443567761}
+  - {fileID: 2896907206869646957}
 --- !u!198 &3451679227013251890
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -13626,6 +13736,7 @@ GameObject:
   - component: {fileID: 6234635356803643044}
   - component: {fileID: 5279711887920956258}
   - component: {fileID: 6011384709742681172}
+  - component: {fileID: 6308504410523780620}
   m_Layer: 0
   m_Name: Blaster
   m_TagString: Untagged
@@ -13647,6 +13758,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4182123788039919492}
+  - {fileID: 3489731124835580598}
   m_Father: {fileID: 4809507703528041052}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5279711887920956258
@@ -13699,6 +13811,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6308504410523780620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8972552176294551336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb33cda57c65bb4bbdd85cf1d8b9d9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ProjectilePrefab: {fileID: 696975335402912389, guid: 683a7914dd6300149b44fcbbfb1fe23e,
+    type: 3}
+  Muzzle: {fileID: 3489731124835580598}
+  _coolDownTime: 0.25
 --- !u!1 &8973790590654567379
 GameObject:
   m_ObjectHideFlags: 0
