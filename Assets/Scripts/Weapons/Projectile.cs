@@ -4,37 +4,41 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField]
     [Range(5000f, 25000f)]
-    float _launchForce = 10000f;
+    float LaunchForce = 10000f;
 
     [SerializeField]
     [Range(10, 1000)]
-    int _damage = 100;
+    int Damage = 100;
 
     [SerializeField]
     [Range(2f, 10f)]
-    float _range = 5f;
+    float Range = 2f;
 
+    [SerializeField] 
+    private GameObject explosionPrefab; // Reference to the explosion prefab
+
+    Rigidbody rb;
+    float Duration;
     bool OutOfFuel
     {
         get
         {
-            _duration -= Time.deltaTime;
-            return _duration <= 0f;
+            Duration -= Time.deltaTime;
+            return Duration <= 0f;
         }
     }
 
-    Rigidbody _rigidBody;
-    float _duration;
+   
 
     void Awake()
     {
-        _rigidBody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void OnEnable()
     {
-        _rigidBody.AddForce(_launchForce * transform.forward);
-        _duration = _range;
+        rb.AddForce(LaunchForce * transform.forward);
+        Duration = Range;
     }
 
     void Update()
@@ -44,6 +48,18 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"projectile collided with {collision.collider.name}");
+        DamageInterface DamageTaken = collision.collider.gameObject.GetComponent<DamageInterface>();
+        Vector3 hitPosition = collision.GetContact(0).point;
+        if (DamageTaken != null)
+        {
+            DamageTaken.TakeDamage(Damage, hitPosition);
+        }
+
+        // Instantiate the explosion prefab at the collision point
+        if (explosionPrefab != null)
+        {
+            Instantiate(explosionPrefab, hitPosition, Quaternion.identity);
+        }
+        Destroy(gameObject);
     }
 }
