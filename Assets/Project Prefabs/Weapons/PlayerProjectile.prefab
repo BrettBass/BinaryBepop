@@ -203,9 +203,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5083f76a5839c744e825c5271749cb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _launchForce: 10000
-  _damage: 100
-  _range: 5
+  LaunchForce: 10000
+  Damage: 100
+  Range: 2
+  explosionPrefab: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef,
+    type: 3}
 --- !u!1 &1147916754655311567
 GameObject:
   m_ObjectHideFlags: 0
