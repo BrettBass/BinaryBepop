@@ -46,10 +46,13 @@ public class ShipController : MonoBehaviour
     [SerializeField]
     List<Laser> Lasers;
 
+    [SerializeField]
+    private AnimateCockpitControls CockpitAnimationControls;
+
     Rigidbody rb;
 
-    MovementControlsInterface movementInput => InputControls.movementControls;
-    WeaponControlsInterface weaponInput => InputControls.weaponControls;
+    MovementControlsInterface MovementInput => InputControls.movementControls;
+    WeaponControlsInterface WeaponInput => InputControls.weaponControls;
 
 
     void Awake()
@@ -61,19 +64,24 @@ public class ShipController : MonoBehaviour
     {
         foreach (ShipEngine engine in Engines)
         {
-            engine.Init(movementInput, rb, ThrustForce / Engines.Count);
+            engine.Init(MovementInput, rb, ThrustForce / Engines.Count);
         }
 
         foreach (Laser laser in Lasers)
         {
             //laser.Init(weaponInput, _shipData.BlasterCooldown, _shipData.BlasterLaunchForce, _shipData.BlasterProjectileDuration, _shipData.BlasterDamage);
         }
+
+        if (CockpitAnimationControls != null)
+        {
+            CockpitAnimationControls.Init(MovementInput);
+        }
     }
     void Update()
     {
-        YawAmount = movementInput.YawAmount;
-        RollAmount = movementInput.RollAmount;
-        PitchAmount = movementInput.PitchAmount;
+        YawAmount = MovementInput.YawAmount;
+        RollAmount = MovementInput.RollAmount;
+        PitchAmount = MovementInput.PitchAmount;
     }
 
     void FixedUpdate()

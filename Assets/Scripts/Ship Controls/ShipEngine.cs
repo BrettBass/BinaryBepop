@@ -12,7 +12,12 @@ public class ShipEngine : MonoBehaviour
     float ThrustAmount;
 
     bool ThrustersEnabled => !Mathf.Approximately(0f, ShipMovementControls.ThrustAmount);
-
+ public void Init(MovementControlsInterface movementControls, Rigidbody rb, float thrustForce)
+    {
+        ShipMovementControls = movementControls;
+        ridgidb = rb;
+        ThrustForce = thrustForce;
+    }
     void Update()
     {
         ActivateThrusters();
@@ -24,12 +29,7 @@ public class ShipEngine : MonoBehaviour
         ridgidb.AddForce(transform.forward * ThrustAmount * Time.fixedDeltaTime);
     }
 
-    public void Init(MovementControlsInterface MovementControls, Rigidbody rb, float thrustForce)
-    {
-        ShipMovementControls = MovementControls;
-        ridgidb = rb;
-        ThrustForce = thrustForce;
-    }
+   
 
     void ActivateThrusters()
     {

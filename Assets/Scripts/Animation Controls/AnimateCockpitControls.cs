@@ -21,18 +21,28 @@ public class AnimateCockpitControls : MonoBehaviour
     ShipInputControls movementInput;
 
     [SerializeField]
-    MovementControlsInterface ControlInput => movementInput.movementControls;
+    private MovementControlsInterface _movementInput;
 
     // Update is called once per frame
     void Update()
     {
-        Joystick.localRotation = Quaternion.Euler(ControlInput.PitchAmount * JoystickRange.x, ControlInput.YawAmount * JoystickRange.y, ControlInput.RollAmount * JoystickRange.z);
+        if (_movementInput == null) return;
+             Joystick.localRotation = Quaternion.Euler(
+            _movementInput.PitchAmount * JoystickRange.x,
+            _movementInput.YawAmount * JoystickRange.y,
+            _movementInput.RollAmount * JoystickRange.z
+        );
 
-        Vector3 ThrottleRotation = Throttles[0].localRotation.eulerAngles;
-        ThrottleRotation.x = ControlInput.ThrustAmount * ThrottleRange;
-        foreach(Transform t in Throttles) 
+        Vector3 throttleRotation = Throttles[0].localRotation.eulerAngles;
+        throttleRotation.x = _movementInput.ThrustAmount * ThrottleRange;
+        foreach (Transform throttle in Throttles)
         {
-            t.localRotation = Quaternion.Euler(ThrottleRotation);
+            throttle.localRotation = Quaternion.Euler(throttleRotation);
         }
+    }
+
+    public void Init(MovementControlsInterface movementControls)
+    {
+        _movementInput = movementControls;
     }
 }
