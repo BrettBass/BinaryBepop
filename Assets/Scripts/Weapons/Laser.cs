@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Blaser : MonoBehaviour
+public class Laser : MonoBehaviour
 {
     [SerializeField]
     Projectile ProjectilePrefab;
@@ -12,18 +12,18 @@ public class Blaser : MonoBehaviour
 
     [SerializeField]
     [Range(0f, 5f)]
-    float _coolDownTime = 0.25f;
+    float CooldownTime = 0.25f;
 
     bool CanFire
     {
         get
         {
-            _coolDown -= Time.deltaTime;
-            return _coolDown <= 0f;
+            Cooldown -= Time.deltaTime;
+            return Cooldown <= 0f;
         }
     }
 
-    float _coolDown;
+    float Cooldown;
 
     // Update is called once per frame
     void Update()
@@ -36,7 +36,7 @@ public class Blaser : MonoBehaviour
 
     void FireProjectile()
     {
-        _coolDown = _coolDownTime;
+        Cooldown = CooldownTime;
         Instantiate(ProjectilePrefab, Muzzle.position, transform.rotation);
     }
 }
