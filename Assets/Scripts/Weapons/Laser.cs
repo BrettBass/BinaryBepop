@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Laser : MonoBehaviour
@@ -13,6 +15,12 @@ public class Laser : MonoBehaviour
     [SerializeField]
     [Range(0f, 5f)]
     float CooldownTime = 0.25f;
+    float Cooldown;
+    int LaunchForce;
+    int Damage;
+    float Duration;
+
+    WeaponControlsInterface WeaponInput;
 
     bool CanFire
     {
@@ -23,12 +31,12 @@ public class Laser : MonoBehaviour
         }
     }
 
-    float Cooldown;
 
     // Update is called once per frame
     void Update()
     {
-        if (CanFire && Input.GetMouseButton(0))
+        if (WeaponInput == null) return;
+        if (CanFire && WeaponInput.PrimaryFired)
         {
             FireProjectile();
         }
@@ -37,6 +45,18 @@ public class Laser : MonoBehaviour
     void FireProjectile()
     {
         Cooldown = CooldownTime;
-        Instantiate(ProjectilePrefab, Muzzle.position, transform.rotation);
+        Projectile projectile = Instantiate(ProjectilePrefab, Muzzle.position, transform.rotation);
+        projectile.gameObject.SetActive(false);
+        projectile.Init(LaunchForce, Damage, Duration);
+        projectile.gameObject.SetActive(true);
+    }
+
+    public void Init(WeaponControlsInterface weaponInput, float CoolDown, int launchForce, float duration, int damage)
+    {
+        WeaponInput = weaponInput;
+        CooldownTime = CoolDown;
+        LaunchForce = launchForce;
+        Duration = duration;
+        Damage = damage;
     }
 }

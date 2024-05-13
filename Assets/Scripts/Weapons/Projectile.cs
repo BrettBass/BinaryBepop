@@ -46,6 +46,14 @@ public class Projectile : MonoBehaviour
         if (OutOfFuel) Destroy(gameObject);
     }
 
+    public void Init(int launchForce, int damage, float range)
+    {
+        Debug.Log($"Projectile({launchForce}, {damage}, {range}");
+        LaunchForce = launchForce;
+        Damage = damage;
+        Range = range;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         DamageInterface DamageTaken = collision.collider.gameObject.GetComponent<DamageInterface>();

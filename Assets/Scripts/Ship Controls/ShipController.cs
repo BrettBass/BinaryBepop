@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class ShipController : MonoBehaviour
 {
     [SerializeField]
-    ShipMovementInput MovementInput;
+    ShipInputControls InputControls;
 
 
     [Header("Ship Movement Values")]
@@ -42,9 +43,14 @@ public class ShipController : MonoBehaviour
     [SerializeField]
     List<ShipEngine> Engines;
 
+    [SerializeField]
+    List<Laser> Lasers;
+
     Rigidbody rb;
 
-    MovementControlsInterface ControlInput => MovementInput.movementControls;
+    MovementControlsInterface movementInput => InputControls.movementControls;
+    WeaponControlsInterface weaponInput => InputControls.weaponControls;
+
 
     void Awake()
     {
@@ -55,14 +61,19 @@ public class ShipController : MonoBehaviour
     {
         foreach (ShipEngine engine in Engines)
         {
-            engine.Init(ControlInput, rb, ThrustForce / Engines.Count);
+            engine.Init(movementInput, rb, ThrustForce / Engines.Count);
+        }
+
+        foreach (Laser laser in Lasers)
+        {
+            //laser.Init(weaponInput, _shipData.BlasterCooldown, _shipData.BlasterLaunchForce, _shipData.BlasterProjectileDuration, _shipData.BlasterDamage);
         }
     }
     void Update()
     {
-        YawAmount = ControlInput.YawAmount;
-        RollAmount = ControlInput.RollAmount;
-        PitchAmount = ControlInput.PitchAmount;
+        YawAmount = movementInput.YawAmount;
+        RollAmount = movementInput.RollAmount;
+        PitchAmount = movementInput.PitchAmount;
     }
 
     void FixedUpdate()

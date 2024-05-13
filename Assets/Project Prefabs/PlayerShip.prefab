@@ -2958,7 +2958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 603760fe7b0f0b147a84f9731813e786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputType: 0
 --- !u!1 &3453909514456477527
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,7 +3181,7 @@ MonoBehaviour:
     FieldOfView: 60
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 10000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}

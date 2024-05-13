@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public class DesktopMovementControls : MovementControlsBase
+public class MovementControls : MovementControlsBase
 {
     [SerializeField]
     float DeadZoneRadius = 0.1f;
