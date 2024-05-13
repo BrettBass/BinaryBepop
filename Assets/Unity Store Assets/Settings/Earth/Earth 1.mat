@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Earth
+  m_Name: Earth 1
   m_Shader: {fileID: -6465566751694194690, guid: 018513534d8535047876da204b49ccf2,
     type: 3}
   m_Parent: {fileID: 0}
@@ -175,23 +175,23 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_1:
-        m_Texture: {fileID: 2800000, guid: a88ee9ed9af4fc946a99eb6839565475, type: 3}
+        m_Texture: {fileID: 2800000, guid: b3852c6951bb38e4884608a584495cff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_1_Normal_Map:
-        m_Texture: {fileID: 2800000, guid: 76f51ee2128be8340950cc15ba9695dd, type: 3}
+        m_Texture: {fileID: 2800000, guid: d79522159a1f6344d8b1c6c2ba127444, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_2:
-        m_Texture: {fileID: 2800000, guid: b9337c53c4df5b54f8823c08c0a45d40, type: 3}
+        m_Texture: {fileID: 2800000, guid: 94ddededa5cbf2242b63ddd549cfba38, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_2_Normal_Map:
-        m_Texture: {fileID: 2800000, guid: d5d87eab3d41c224c9524b61a2523085, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4afc1765a23e31b4d91c3c7223087506, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_3:
-        m_Texture: {fileID: 2800000, guid: 2f11c4bf57fe64b4f859276390ae902d, type: 3}
+        m_Texture: {fileID: 2800000, guid: 20e8f0574dfbc8f4e9ea37a90e90345f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_3_Normal_Map:
@@ -199,19 +199,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_4:
-        m_Texture: {fileID: 2800000, guid: ffd07a53ce00d2d48beb5b77432d053c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6d3bcefd7545f5049a1775557226c85f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_4_Normal_Map:
-        m_Texture: {fileID: 2800000, guid: 3cf6eee3d0cee82429945f707475de05, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9821a1d54d95c1843968fde988b93fb3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_5:
-        m_Texture: {fileID: 2800000, guid: 1e103bb5bfee2fc4aabb9e1a0ea6f4a9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 49a081721f60c6a44bcae188078bd036, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture_5_Normal_Map:
-        m_Texture: {fileID: 2800000, guid: 6e4929d33a886b34595bc2fe1cb0449f, type: 3}
+        m_Texture: {fileID: 2800000, guid: d5d87eab3d41c224c9524b61a2523085, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Triplanar_3ac1c0eb5c754b3daab2f63523027cd4_Texture_1_Texture2D:
@@ -259,7 +259,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Displacement_Amplitude: 0.11
+    - _Displacement_Amplitude: 0.09
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnableHeightBlend: 0
@@ -298,7 +298,7 @@ Material:
     - _NumLayersCount: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Planet_Mesh_Radius: 1.07
+    - _Planet_Mesh_Radius: 0.97
     - _PoleBiomeBlend: 0.191
     - _PoleBiomeNoiseStrength: 0
     - _PoleBiomeNoiseStrength2: 0
