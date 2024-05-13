@@ -18,7 +18,7 @@ public class AnimateCockpitControls : MonoBehaviour
     float ThrottleRange = 35f;
 
     [SerializeField]
-    ShipMovementInput movementInput;
+    ShipInputControls movementInput;
 
     [SerializeField]
     MovementControlsInterface ControlInput => movementInput.movementControls;
