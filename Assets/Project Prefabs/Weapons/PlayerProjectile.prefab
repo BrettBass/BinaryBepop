@@ -205,7 +205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LaunchForce: 10000
   Damage: 100
-  Range: 5
+  Range: 2
   explosionPrefab: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef,
     type: 3}
 --- !u!1 &1147916754655311567
