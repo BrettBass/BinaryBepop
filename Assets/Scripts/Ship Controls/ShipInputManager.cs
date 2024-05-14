@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class ShipInputManager : MonoBehaviour
 {
+    // Enum to represent different types of inputs.
     public enum InputType
     {
         Desktop,
@@ -10,8 +11,10 @@ public class ShipInputManager : MonoBehaviour
         Bot
     }
 
+    // Static method to get movement controls based on the input type.
     public static MovementControlsInterface GetMovementControls(InputType type)
     {
+        //Switch expression similar to switch case
         return type switch
         {
             InputType.Desktop => new MovementControls(),
@@ -21,8 +24,10 @@ public class ShipInputManager : MonoBehaviour
         };
     }
 
+    // Static method to get weapon controls based on the input type.
     public static WeaponControlsInterface GetWeaponControls(InputType inputType)
     {
+        //Switch expression similar to switch case
         return inputType switch
         {
             InputType.Desktop => new WeaponControls(),

@@ -19,24 +19,24 @@ MonoBehaviour:
   perturbCompute: {fileID: 7200000, guid: c95c667630d66481daf208e2a7a4d95d, type: 3}
   perturbStrength: 0.28
   oceanDepthMultiplier: 4.15
-  oceanFloorDepth: 1.67
+  oceanFloorDepth: 1.32
   oceanFloorSmoothing: 0.93
-  mountainBlend: 0.95
+  mountainBlend: 162.7
   continentNoise:
     numLayers: 4
     lacunarity: 1
     persistence: 1
     scale: 1
-    elevation: 1.8
-    verticalShift: 0.09
+    elevation: 21.8
+    verticalShift: -39.47
     offset: {x: 0, y: 0, z: 0}
   maskNoise:
     numLayers: 4
     lacunarity: 2
-    persistence: 0.24
-    scale: 1
-    elevation: 2.64
-    verticalShift: 0.42
+    persistence: 0.95
+    scale: 2.4
+    elevation: 14
+    verticalShift: 32.1
     offset: {x: 0, y: 0, z: 0}
   ridgeNoise:
     numLayers: 5
